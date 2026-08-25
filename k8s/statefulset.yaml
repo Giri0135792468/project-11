@@ -33,8 +33,9 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: data
-
       spec:
+        storageClassName: gp2
+    
         accessModes:
           - ReadWriteOnce
 
