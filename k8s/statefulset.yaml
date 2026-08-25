@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: stateful-app
+  namespace: project-11
+
+spec:
+  serviceName: stateful-app
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: stateful-app
+
+  template:
+    metadata:
+      labels:
+        app: stateful-app
+
+    spec:
+      containers:
+        - name: app
+          image: nginx:alpine
+
+          ports:
+            - containerPort: 80

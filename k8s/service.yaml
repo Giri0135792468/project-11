@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: stateful-app
+  namespace: project-11
+
+spec:
+  clusterIP: None
+
+  selector:
+    app: stateful-app
+
+  ports:
+    - port: 80
+      targetPort: 80
